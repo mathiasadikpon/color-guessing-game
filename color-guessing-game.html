@@ -47,8 +47,9 @@
         } while (!correct);
 
         alert(
-          `Congratulation! You have guessed the color!\n\nIt took you ${numTries} guesses to finish the game!`
+          `Congratulation! You have guessed the color!\n\nIt took you ${numTries} guesses to finish the game!\n\nHit OK to see the color in the background.`
         );
+        document.body.style.background = guess;
       }
 
       function checkGuess(guess, target) {
