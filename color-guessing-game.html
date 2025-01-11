@@ -28,7 +28,22 @@
       //TIP log to console
       console.log(`The target is: ${target}`);
 
-      function runGame() {}
+      function runGame() {
+        do {
+          guess = prompt(
+            "I am thinking of one of the colors:\n\n" +
+              COLORS_ARRAY +
+              "\n\nWhat color am I thinking of?\n"
+          );
+          if (guess === null) {
+            alert("The game has been aborted");
+            return;
+          }
+          correct = checkGuess(guess, target);
+        } while (!correct);
+
+        alert("Congratulation! You have guessed the color!");
+      }
 
       function checkGuess(guess, target) {}
     </script>
