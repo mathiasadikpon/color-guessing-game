@@ -45,7 +45,23 @@
         alert("Congratulation! You have guessed the color!");
       }
 
-      function checkGuess(guess, target) {}
+      function checkGuess(guess, target) {
+        let correct = false;
+        if (!COLORS_ARRAY.includes(guess)) {
+          alert("Sorrry, I don't recognize your color.\n\nPlease try again.");
+        } else if (guess > target) {
+          alert(
+            "Sorry, your guess is incorrect.\n\nHint: your color is alphabetically higher than mine.\n\nPlease try again."
+          );
+        } else if (guess < target) {
+          alert(
+            "Sorry, your guess is incorrect.\n\nHint: your color is alphabetically lower than mine.\n\nPlease try again."
+          );
+        } else {
+          correct = true;
+        }
+        return correct;
+      }
     </script>
   </body>
 </html>
