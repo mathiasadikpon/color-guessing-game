@@ -29,6 +29,8 @@
       //TIP log to console
       console.log(`The target is: ${target}`);
 
+      let numTries = 0; // task 2
+
       function runGame() {
         do {
           guess = prompt(
@@ -40,10 +42,13 @@
             alert("The game has been aborted");
             return;
           }
+          numTries++;
           correct = checkGuess(guess, target);
         } while (!correct);
 
-        alert("Congratulation! You have guessed the color!");
+        alert(
+          `Congratulation! You have guessed the color!\n\nIt took you ${numTries} guesses to finish the game!`
+        );
       }
 
       function checkGuess(guess, target) {
